@@ -14,6 +14,8 @@
 #
 # if __name__ == "__main__":
 #     run()
+from matplotlib import pyplot as plt
+
 
 # def observed():
 #     observations = {"car", "Sky Scraper", "Sky scraper", "Bike", "House"}
@@ -84,3 +86,56 @@
 #         print(f"{data[0]} observed {data[1]} times.")
 #
 # run_task3()
+
+# import matplotlib.pyplot as plt
+#
+# x = [0, 5, 10]
+#
+# y = [0, 50, 100]
+#
+# plt.plot(x, y)
+# plt.show()
+
+# def Run_Task1():
+#     x_values = [1, 2, 3, 4, 5]
+#     y_values = [1, 4, 9, 16, 25]
+#     display_line(x_values, y_values)
+#
+# def display_line(x, y):
+#     plt.plot(x, y)
+#     plt.xlabel('x values')
+#     plt.ylabel('y values')
+#     plt.show()
+#
+# Run_Task1()
+
+import matplotlib.pyplot as plt
+
+def coordinate():
+    print("Please enter an x value:")
+    x=int(input())
+    print("Please enter an y value:")
+    y=int(input())
+
+    return x,y
+
+def path():
+    print("Retreiving path...")
+    x_values = []
+    y_values = []
+
+    for count in range(4):
+        data = coordinate()
+        x_values.append(data[0])
+        y_values.append(data[1])
+
+    return x_values, y_values
+
+def run_task1():
+    values = path()
+    plt.plot(values[0],values[1],  "r--o")
+    plt.xlabel("x values")
+    plt.ylabel("y values")
+    plt.show()
+
+run_task1()
